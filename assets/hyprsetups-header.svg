@@ -4,26 +4,19 @@
   <animate attributeName="stroke-opacity" values=".18;.35;.18" dur="4s" repeatCount="indefinite"/>
 </rect>
 
-<!-- floating background dots -->
-<g fill="#fff">
-  <circle cx="70" cy="38" r="2" opacity=".45"><animateMotion dur="13s" repeatCount="indefinite" path="M0 0 C45 22 75 -18 115 8 S175 42 205 5"/></circle>
-  <circle cx="165" cy="28" r="1.7" opacity=".32"><animateMotion dur="17s" repeatCount="indefinite" path="M0 0 C-25 35 35 55 70 15 S115 -20 145 20"/></circle>
-  <circle cx="275" cy="45" r="2.2" opacity=".5"><animateMotion dur="11s" repeatCount="indefinite" path="M0 0 C35 -30 65 30 100 0 S160 -25 185 20"/></circle>
-  <circle cx="385" cy="25" r="1.8" opacity=".35"><animateMotion dur="15s" repeatCount="indefinite" path="M0 0 C-40 20 15 55 55 12 S120 -15 150 25"/></circle>
-  <circle cx="510" cy="40" r="2" opacity=".42"><animateMotion dur="12s" repeatCount="indefinite" path="M0 0 C30 35 70 -25 105 8 S165 45 195 0"/></circle>
-  <circle cx="635" cy="28" r="1.7" opacity=".3"><animateMotion dur="18s" repeatCount="indefinite" path="M0 0 C-35 25 25 55 65 15 S125 -15 160 22"/></circle>
-  <circle cx="745" cy="48" r="2.2" opacity=".48"><animateMotion dur="14s" repeatCount="indefinite" path="M0 0 C35 -28 65 35 105 0 S160 -20 185 18"/></circle>
-  <circle cx="835" cy="32" r="1.8" opacity=".35"><animateMotion dur="16s" repeatCount="indefinite" path="M0 0 C-30 35 25 50 60 12 S110 -18 145 25"/></circle>
-
-  <circle cx="55" cy="125" r="1.8" opacity=".32"><animateMotion dur="16s" repeatCount="indefinite" path="M0 0 C40 -25 70 35 115 0 S175 -20 205 20"/></circle>
-  <circle cx="145" cy="150" r="2" opacity=".45"><animateMotion dur="12s" repeatCount="indefinite" path="M0 0 C-25 -35 30 -55 70 -12 S125 20 160 -18"/></circle>
-  <circle cx="270" cy="135" r="1.7" opacity=".35"><animateMotion dur="18s" repeatCount="indefinite" path="M0 0 C35 25 70 -35 110 0 S165 30 195 -15"/></circle>
-  <circle cx="400" cy="150" r="2.2" opacity=".48"><animateMotion dur="13s" repeatCount="indefinite" path="M0 0 C-35 -25 25 -55 65 -10 S125 25 165 -15"/></circle>
-  <circle cx="530" cy="132" r="1.8" opacity=".32"><animateMotion dur="17s" repeatCount="indefinite" path="M0 0 C30 30 70 -25 105 5 S160 35 190 -10"/></circle>
-  <circle cx="650" cy="150" r="2" opacity=".42"><animateMotion dur="11s" repeatCount="indefinite" path="M0 0 C-30 -30 30 -50 75 -8 S135 20 170 -20"/></circle>
-  <circle cx="775" cy="130" r="1.7" opacity=".34"><animateMotion dur="15s" repeatCount="indefinite" path="M0 0 C35 25 70 -35 110 0 S165 30 200 -15"/></circle>
-  <circle cx="855" cy="145" r="2.1" opacity=".46"><animateMotion dur="19s" repeatCount="indefinite" path="M0 0 C-35 -30 20 -55 60 -10 S120 25 155 -18"/></circle>
-</g>
+<!-- floating corner dots -->
+<circle cx="42" cy="42" r="2.2" fill="#fff" opacity=".55">
+  <animateMotion dur="9s" repeatCount="indefinite" path="M0 0 C18 12 28 -10 48 4 S62 30 35 38 S-10 25 0 0"/>
+</circle>
+<circle cx="858" cy="42" r="2.2" fill="#fff" opacity=".55">
+  <animateMotion dur="11s" repeatCount="indefinite" path="M0 0 C-18 12 -28 -10 -48 4 S-62 30 -35 38 S10 25 0 0"/>
+</circle>
+<circle cx="42" cy="138" r="2.2" fill="#fff" opacity=".55">
+  <animateMotion dur="10s" repeatCount="indefinite" path="M0 0 C18 -12 28 10 48 -4 S62 -30 35 -38 S-10 -25 0 0"/>
+</circle>
+<circle cx="858" cy="138" r="2.2" fill="#fff" opacity=".55">
+  <animateMotion dur="12s" repeatCount="indefinite" path="M0 0 C-18 -12 -28 10 -48 -4 S-62 -30 -35 -38 S10 -25 0 0"/>
+</circle>
 
 <text x="450" y="78" text-anchor="middle" fill="#fff" font-family="monospace" font-size="38" font-weight="700" letter-spacing="4">HYPRSETUPS
   <animate attributeName="opacity" values=".78;1;.78" dur="4s" repeatCount="indefinite"/>
