@@ -29,10 +29,23 @@ They're all part of the same collection, but each setup is meant to stand on its
 
 | Setup | Style | Status |
 | :--- | :--- | :--- |
-| **Black / Monochrome** | minimal · glass · monochrome | current |
+| **HUD** | desktop HUD · widgets · overlays | planned |
+| **Minimalist Black Glass** | minimal · glass · monochrome | current |
+| **Green Hacker** | green · terminal · hacker | placeholder |
+| **RGB** | RGB · colorful · gaming | placeholder |
+| **Neon Blue Hyprland Rice** | neon blue · dark · cyber | placeholder |
+| **Space** | space · dark · cosmic | placeholder |
+| **Candy** | pastel · colorful · soft | placeholder |
+| **Spider-Man** | red · blue · comic | placeholder |
+| **Spider-Man: Miles Morales** | red · black · neon | placeholder |
+| **Venom** | black · symbiote · dark | placeholder |
+| **Carnage** | red · black · chaotic | placeholder |
+| **Batman** | black · yellow · dark | placeholder |
+| **Deadpool** | red · black · comic | placeholder |
+| **Five Nights at Freddy's** | dark · horror · arcade | placeholder |
 | **more setups** | whatever I feel like making | soon |
 
-> this list will grow as I make more.
+> these are placeholders for now. they'll get their own folders, previews, configs, and setup instructions as I build them.
 
 ## // CURRENT RICE
 
