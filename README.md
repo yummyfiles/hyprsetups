@@ -11,7 +11,7 @@
 
 <br /><br />
 
-<sub>a collection of my Hyprland rices, setups, experiments, and random desktop ideas.</sub>
+<sub>a collection of my Hyprland rices and setups</sub>
 
 </div>
 
