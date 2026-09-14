@@ -4,14 +4,6 @@
   <animate attributeName="stroke-opacity" values=".18;.35;.18" dur="4s" repeatCount="indefinite"/>
 </rect>
 
-<!-- original corner dots -->
-<g fill="#fff">
-  <circle cx="42" cy="42" r="2.5" opacity=".65"><animateTransform attributeName="transform" type="translate" values="0 0;8 -5;-5 8;6 4;0 0" dur="8s" repeatCount="indefinite"/></circle>
-  <circle cx="858" cy="42" r="2.5" opacity=".65"><animateTransform attributeName="transform" type="translate" values="0 0;-8 -4;5 8;-6 5;0 0" dur="9s" repeatCount="indefinite"/></circle>
-  <circle cx="42" cy="138" r="2.5" opacity=".65"><animateTransform attributeName="transform" type="translate" values="0 0;7 6;-6 -7;5 -3;0 0" dur="10s" repeatCount="indefinite"/></circle>
-  <circle cx="858" cy="138" r="2.5" opacity=".65"><animateTransform attributeName="transform" type="translate" values="0 0;-7 6;6 -7;-5 -3;0 0" dur="11s" repeatCount="indefinite"/></circle>
-</g>
-
 <!-- random floating particles -->
 <g fill="#fff">
   <circle cx="80" cy="65" r="2" opacity=".45"><animateTransform attributeName="transform" type="translate" values="0 0;35 18;-18 32;28 -12;0 0" dur="14s" repeatCount="indefinite"/></circle>
