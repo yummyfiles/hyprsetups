@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/yummyfiles/hyprsetups/main/assets/hyprsetups-header.svg?v=3" alt="HYPRSETUPS // RICE COLLECTION" width="900" />
+<img src="https://raw.githubusercontent.com/yummyfiles/hyprsetups/main/assets/hyprsetups-header.svg?v=4" alt="HYPRSETUPS // RICE COLLECTION" width="900" />
 
 <br />
 
@@ -179,65 +179,48 @@ Each rice gets its own little screenshot set instead of just one preview:
 </td></tr>
 </table>
 
-> screenshots are placeholders for now. each setup will eventually have its own real desktop, Spotify, Waybar, Rofi, Firefox, Stoat, and Fastfetch screenshots.
-
-## // CURRENT RICE
-
-<img src="assets/current-setup.svg" alt="Current Hyprland setup" width="900" />
-
-My current setup is a mostly black-and-white Hyprland desktop with a minimal UI, subtle glass/blur effects, and a bunch of small custom touches.
-
-It'll probably look completely different eventually lol.
-
 ## // WHAT'S IN A SETUP
 
-Each rice can have its own:
+Each setup is meant to include the actual stuff you'd need to recreate it:
 
 - Hyprland config
-- Waybar
+- Waybar config
+- launcher setup
+- terminal config
 - wallpapers
+- app styling
 - keybinds
-- terminal setup
-- colors
-- window styling
-- plugins
-- apps
-- little custom things
-
-Some setups need more stuff than others, so the dependencies and setup instructions live with the individual rice.
+- scripts
+- little customizations that make the setup feel like its own thing
 
 ## // INSTALL
 
-Pick a setup and follow the README inside its folder.
+Each finished rice will have its own folder with setup instructions.
 
-Before installing anything, **back up your existing Hyprland configuration.**
-
-These setups can change things like your keybinds, Waybar, wallpapers, applications, and other desktop settings.
+The goal is to make it easy to grab a setup and make it yours without having to dig through a giant pile of random config files.
 
 ## // CUSTOMIZE IT
 
-Don't feel like you have to use these exactly as they are.
+You don't have to use these exactly as-is.
 
-Change the colors. Swap the wallpaper. Remove half the stuff. Add your own. Completely break it and rebuild it if you want.
+Swap the wallpaper, change the colors, move stuff around, replace apps, steal parts from one rice for another — whatever.
 
-The point is to give you a starting point, not a finished desktop you're supposed to leave untouched.
+They're setups, not rules.
 
 ## // WHY THIS EXISTS
 
-I don't really have one perfect Linux setup.
+I like messing with my desktop.
 
-I make something, use it for a while, get bored, change everything, and eventually end up making another one.
+Sometimes I want something clean. Sometimes I want way too many widgets. Sometimes I just want to see if I can make an idea actually work.
 
-So instead of pretending I'm ever going to settle on one rice, I'm keeping the whole collection here.
+So I'm keeping all of it.
+
+Maybe someone else finds a setup they like and uses it too.
 
 ---
 
 <div align="center">
 
-<sub>made for people who like customizing their desktop way too much</sub>
-
-<br />
-
-<sub><i>psst... i use arch btw</i> &nbsp; (👁    _    👁)</sub>
+<sub><i>psst... i use arch btw</i> (👁    _    👁)</sub>
 
 </div>
