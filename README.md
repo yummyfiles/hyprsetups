@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/hyprsetups-header.svg" alt="HYPRSETUPS // RICE COLLECTION" width="900" />
+<img src="https://raw.githubusercontent.com/yummyfiles/hyprsetups/main/assets/hyprsetups-header.svg?v=2" alt="HYPRSETUPS // RICE COLLECTION" width="900" />
 
 <br />
 
