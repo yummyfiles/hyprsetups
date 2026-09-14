@@ -29,6 +29,4 @@
   <animate attributeName="opacity" values=".45;.75;.45" dur="4s" repeatCount="indefinite"/>
 </text>
 <path d="M120 140H780" stroke="#fff" stroke-opacity=".18"/>
-<circle r="3" fill="#fff"><animateMotion dur="6s" repeatCount="indefinite" path="M120 140H780"/><animate attributeName="r" values="2;4;2" dur="1.5s" repeatCount="indefinite"/></circle>
-<circle r="3" fill="#fff"><animateMotion dur="6s" begin="3s" repeatCount="indefinite" path="M780 140H120"/><animate attributeName="r" values="2;4;2" dur="1.5s" begin=".75s" repeatCount="indefinite"/></circle>
 </svg>
