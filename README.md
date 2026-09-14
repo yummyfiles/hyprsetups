@@ -47,6 +47,127 @@ They're all part of the same collection, but each setup is meant to stand on its
 
 > these are placeholders for now. they'll get their own folders, previews, configs, and setup instructions as I build them.
 
+## // SCREENSHOTS
+
+A visual gallery of the collection. Screenshots will be added as each rice gets built.
+
+<table>
+<tr>
+<td align="center" width="50%">
+
+**HUD**
+
+<img src="assets/screenshots/hud-placeholder.svg" alt="HUD screenshot placeholder" width="420" />
+
+</td>
+<td align="center" width="50%">
+
+**Minimalist Black Glass**
+
+<img src="assets/screenshots/minimalist-black-glass-placeholder.svg" alt="Minimalist Black Glass screenshot placeholder" width="420" />
+
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+
+**Green Hacker**
+
+<img src="assets/screenshots/green-hacker-placeholder.svg" alt="Green Hacker screenshot placeholder" width="420" />
+
+</td>
+<td align="center" width="50%">
+
+**RGB**
+
+<img src="assets/screenshots/rgb-placeholder.svg" alt="RGB screenshot placeholder" width="420" />
+
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+
+**Neon Blue Hyprland Rice**
+
+<img src="assets/screenshots/neon-blue-placeholder.svg" alt="Neon Blue Hyprland Rice screenshot placeholder" width="420" />
+
+</td>
+<td align="center" width="50%">
+
+**Space**
+
+<img src="assets/screenshots/space-placeholder.svg" alt="Space screenshot placeholder" width="420" />
+
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+
+**Candy**
+
+<img src="assets/screenshots/candy-placeholder.svg" alt="Candy screenshot placeholder" width="420" />
+
+</td>
+<td align="center" width="50%">
+
+**Spider-Man**
+
+<img src="assets/screenshots/spiderman-placeholder.svg" alt="Spider-Man screenshot placeholder" width="420" />
+
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+
+**Spider-Man: Miles Morales**
+
+<img src="assets/screenshots/miles-morales-placeholder.svg" alt="Miles Morales screenshot placeholder" width="420" />
+
+</td>
+<td align="center" width="50%">
+
+**Venom**
+
+<img src="assets/screenshots/venom-placeholder.svg" alt="Venom screenshot placeholder" width="420" />
+
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+
+**Carnage**
+
+<img src="assets/screenshots/carnage-placeholder.svg" alt="Carnage screenshot placeholder" width="420" />
+
+</td>
+<td align="center" width="50%">
+
+**Batman**
+
+<img src="assets/screenshots/batman-placeholder.svg" alt="Batman screenshot placeholder" width="420" />
+
+</td>
+</tr>
+<tr>
+<td align="center" width="50%">
+
+**Deadpool**
+
+<img src="assets/screenshots/deadpool-placeholder.svg" alt="Deadpool screenshot placeholder" width="420" />
+
+</td>
+<td align="center" width="50%">
+
+**Five Nights at Freddy's**
+
+<img src="assets/screenshots/fnaf-placeholder.svg" alt="Five Nights at Freddy's screenshot placeholder" width="420" />
+
+</td>
+</tr>
+</table>
+
+> screenshots are intentionally placeholders right now. replace each one with the actual rice screenshot when it's ready.
+
 ## // CURRENT RICE
 
 <img src="assets/current-setup.svg" alt="Current Hyprland setup" width="900" />
