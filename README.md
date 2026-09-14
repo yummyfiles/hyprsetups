@@ -29,7 +29,7 @@ They're all part of the same collection, but each setup is meant to stand on its
 
 | Setup | Style | Status |
 | :--- | :--- | :--- |
-| **HUD** | desktop HUD · widgets · overlays | current |
+| **HUD** | desktop HUD · widgets · overlays | in progress |
 | **Minimalist Black Glass** | minimal · glass · monochrome | placeholder |
 | **Green Hacker** | green · terminal · hacker | placeholder |
 | **RGB** | RGB · colorful · gaming | placeholder |
