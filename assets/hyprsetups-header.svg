@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="180" viewBox="0 0 900 180">
+<rect width="900" height="180" rx="18" fill="#000"/>
+<rect x="1" y="1" width="898" height="178" rx="17" fill="none" stroke="#fff" stroke-opacity=".25"/>
+<text x="450" y="78" text-anchor="middle" fill="#fff" font-family="monospace" font-size="38" font-weight="700" letter-spacing="4">HYPRSETUPS</text>
+<text x="450" y="112" text-anchor="middle" fill="#fff" fill-opacity=".65" font-family="monospace" font-size="15" letter-spacing="2">// HYPRLAND RICE COLLECTION</text>
+<path d="M120 140H780" stroke="#fff" stroke-opacity=".3"/>
+<circle cx="120" cy="140" r="3" fill="#fff"/>
+<circle cx="780" cy="140" r="3" fill="#fff"/>
+<g fill="#fff" opacity=".55"><circle cx="42" cy="42" r="2"/><circle cx="858" cy="42" r="2"/><circle cx="42" cy="138" r="2"/><circle cx="858" cy="138" r="2"/></g>
+</svg>
