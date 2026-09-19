@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+# dotfiles-setup — pick & apply a rice from the hyprsetups collection.
+#
+#   dotfiles-setup               pick a setup with rofi (fallback: plain list)
+#   dotfiles-setup list          list all rices in the repo
+#   dotfiles-setup use <name>    apply that rice (runs install.sh --force)
+#   dotfiles-setup pull          sync new setups/placeholders from GitHub
+
+set -e
+
+REPO="${DOTFILES_DIR:-$HOME/dotfiles}"
+
+info() { # info <dir> <field>  (name|desc|status)
+    local f="$1/.info"
+    [ -f "$f" ] || return 1
+    sed -n "s/^$2: *//p" "$f"
+}
+
+list_setups() {
+    for d in "$REPO"/*/; do
+        [ -d "$d" ] || continue
+        [ -f "$d/.info" ] || continue
+        id="$(basename "$d")"
+        name="$(info "$d" name || echo "$id")"
+        desc="$(info "$d" desc || echo "")"
+        status="$(info "$d" status || echo "placeholder")"
+        printf '%-28s %-22s %-45s [%s]\n' "$id" "$name" "$desc" "$status"
+    done
+}
+
+case "${1:-}" in
+    list)
+        echo "Rices in $REPO:"
+        echo "--------------------------------------------------------------------------------"
+        list_setups
+        ;;
+    use|switch)
+        TARGET="${2:-}"
+        if [ -z "$TARGET" ]; then
+            if command -v rofi >/dev/null 2>&1 && [ -n "${WAYLAND_DISPLAY:-}${DISPLAY:-}" ]; then
+                MENU=""
+                for d in "$REPO"/*/; do
+                    [ -f "$d/.info" ] || continue
+                    id="$(basename "$d")"
+                    MENU+="$(info "$d" name || echo "$id") :: $(info "$d" desc || echo "") :: $id"$'\n'
+                done
+                PICK="$(printf '%s' "$MENU" | rofi -dmenu -p "use rice" 2>/dev/null || true)"
+                TARGET="$(printf '%s' "$PICK" | awk -F' :: ' '{print $3}')"
+            else
+                list_setups
+                printf 'enter a rice name: '; read -r TARGET
+            fi
+            [ -z "$TARGET" ] && { echo "no rice selected"; exit 1; }
+        fi
+
+        [ -d "$REPO/$TARGET" ] || { echo "!! no such rice: $TARGET" >&2; exit 1; }
+        if [ ! -d "$REPO/$TARGET/config" ] && [ ! -d "$REPO/$TARGET/home" ]; then
+            name="$(info "$REPO/$TARGET" name || echo "$TARGET")"
+            echo "!! \"$name\" is a placeholder - nothing to apply yet." >&2
+            exit 1
+        fi
+
+        echo "==> applying \"$(info "$REPO/$TARGET" name || echo "$TARGET")\""
+        sh "$REPO/install.sh" --force "$TARGET"
+        echo "==> active rice: $TARGET"
+        ;;
+    pull)
+        git -C "$REPO" pull --ff-only --rebase=false --autostash 2>&1 | tail -3
+        echo "==> run \`dotfiles-setup list\` to see any new rices."
+        ;;
+    help|-h|--help|"")
+        echo "dotfiles-setup: pick & apply a rice from the hyprsetups collection"
+        echo "  (no args)       pick a rice with rofi"
+        echo "  list            list all rices in the collection"
+        echo "  use <name>      apply the given rice (relinks configs)"
+        echo "  pull            fetch new rices/placeholders from GitHub"
+        ;;
+    *) echo "unknown command: $1 (try: list | use <name> | pull)" >&2; exit 1; ;;
+esac

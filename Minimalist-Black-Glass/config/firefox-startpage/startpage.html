@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Tab</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3Cpath%20fill='none'%20stroke='%23ffffff'%20stroke-width='1.6'%20d='M8%201.8%20L1%207.6%20V14.5%20H5.4%20V9.9%20H10.6%20V14.5%20H15%20V7.6%20Z'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #000000;
+    --fg: #ffffff;
+    --dim: #8a8a8a;
+    --panel: #0d0d0d;
+    --edge: #2a2a2a;
+    --font: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+  }
+  /* Private-browsing windows: keep the same page, swap white accents for purple */
+  html.private {
+    --fg: #b794f6;
+    --dim: #9383d4;
+    --edge: #6d5ba8;
+  }
+  * { box-sizing: border-box; }
+  body, input, button, textarea, select { font-family: var(--font); }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    height: 100%;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-top: 14vh;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .brand {
+    text-align: center;
+    font-family: var(--font);
+    font-size: 84px;
+    line-height: 1;
+    margin-bottom: 26px;
+    color: var(--fg);
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .clock { text-align: center; margin-bottom: 40px; }
+  .clock .ctime { font-size: 48px; letter-spacing: .08em; line-height: 1; }
+  .clock .cdate { font-size: 12px; letter-spacing: .22em; color: var(--dim); margin-top: 12px; }
+  .sbox { position: relative; }
+  .ring {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 2;
+  }
+  .ring rect {
+    fill: none;
+    stroke: var(--fg);
+    stroke-width: 2;
+  }
+  .search {
+    width: 100%;
+    background: var(--bg);
+    color: var(--fg);
+    border: 2px solid transparent;
+    border-radius: 0;
+    padding: 13px 16px;
+    font-size: 17px;
+    font-family: var(--font);
+    caret-color: var(--fg);
+    outline: none;
+    position: relative;
+    z-index: 1;
+  }
+  .search::placeholder { color: #6f6f6f; }
+  .sugs {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border: 2px solid var(--fg);
+    border-top: none;
+    z-index: 10;
+    display: none;
+  }
+  .sugs.open { display: block; }
+  .sug {
+    padding: 10px 16px;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255,255,255,.35);
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sug:last-child { border-bottom: none; }
+  .sug.active { background: var(--fg); color: var(--bg); }
+
+  .scs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 40px;
+  }
+  .sc {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 76px;
+    padding: 12px 6px 10px;
+    background: var(--panel);
+    border: 1px solid var(--edge);
+    color: var(--fg);
+    text-decoration: none;
+    transition: border-color .12s ease;
+  }
+  .sc:hover { border-color: var(--fg); }
+  .sc img { width: 26px; height: 26px; border-radius: 4px; }
+  .sc .k { font-size: 11px; letter-spacing: .06em; color: var(--dim); white-space: nowrap; }
+  .sc:hover .k { color: var(--fg); }
+  .sc .x {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    display: none;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    line-height: 16px;
+    text-align: center;
+    background: #1a1a1a;
+    border: 1px solid var(--edge);
+    color: var(--fg);
+    cursor: pointer;
+    font-size: 13px;
+  }
+  .sc:hover .x { display: block; }
+  .sc-add {
+    border-style: dashed;
+    cursor: pointer;
+    font-size: 22px;
+    background: none;
+    font-family: var(--font);
+  }
+  .sc-add:hover { border-color: var(--fg); color: var(--fg); }
+
+  .editor,
+  .ghset {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.75);
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+  }
+  .editor.open,
+  .ghset.open { display: flex; }
+  .editor .box,
+  .ghset .box {
+    width: 360px;
+    padding: 20px;
+    background: var(--panel);
+    border: 1px solid var(--edge);
+  }
+  .editor .box h2,
+  .ghset .box h2 {
+    margin: 0 0 16px;
+    font-size: 14px;
+    letter-spacing: .18em;
+    color: var(--dim);
+    font-weight: normal;
+  }
+  .editor .box input,
+  .ghset .box input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    background: var(--bg);
+    border: 1px solid var(--edge);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: 14px;
+    outline: none;
+  }
+  .editor .box input:focus,
+  .ghset .box input:focus { border-color: var(--fg); }
+  .editor .btns,
+  .ghset .btns { display: flex; gap: 10px; margin-top: 4px; }
+  .editor .btns button,
+  .ghset .btns button {
+    flex: 1;
+    padding: 9px 0;
+    background: var(--fg);
+    border: none;
+    color: var(--bg);
+    font-family: var(--font);
+    font-size: 13px;
+    letter-spacing: .12em;
+    cursor: pointer;
+  }
+  .editor .btns button.ghost,
+  .ghset .btns button.ghost { background: none; border: 1px solid var(--edge); color: var(--fg); }
+  .editor .btns button:hover,
+  .ghset .btns button:hover { border-color: var(--fg); }
+  .ghset-msg {
+    min-height: 16px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    letter-spacing: .12em;
+    color: var(--dim);
+  }
+
+  .engines {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .eng-lbl {
+    color: #4a4a4a;
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: .3em;
+    align-self: center;
+    position: relative;
+    top: -2px;
+  }
+  .eng {
+    background: none;
+    border: none;
+    padding: 0 0 3px;
+    color: #6f6f6f;
+    font-family: var(--font);
+    font-size: 12px;
+    letter-spacing: .14em;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+  }
+  .eng:hover { color: var(--fg); }
+  .eng.active { color: var(--fg); border-bottom-color: var(--fg); }
+
+  .gh { margin-top: 46px; }
+  .gh-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .gh-lbl {
+    font-size: 11px;
+    letter-spacing: .3em;
+    color: var(--dim);
+  }
+  .gh-status {
+    text-decoration: none;
+    border-bottom: 1px dashed #444444;
+    color: var(--dim);
+    cursor: pointer;
+  }
+  .gh-status:hover { color: var(--fg); border-bottom-color: var(--fg); }
+  .gh-body { margin-top: 20px; }
+  .gh-msg {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: .18em;
+    color: var(--dim);
+  }
+  .gh-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    border: 1px solid #ffffff;
+    padding: 16px 20px;
+  }
+  .gh-avatar {
+    width: 64px;
+    height: 64px;
+    border: 1px solid #333333;
+    filter: grayscale(1) contrast(1.05);
+  }
+  .gh-info { min-width: 0; }
+  .gh-name {
+    font-size: 15px;
+    color: var(--fg);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 190px;
+  }
+  .gh-login {
+    font-size: 11px;
+    letter-spacing: .12em;
+    color: var(--dim);
+    margin-top: 3px;
+  }
+  .gh-stats { display: flex; gap: 24px; }
+  .gh-stat { text-align: center; }
+  .gh-stat b {
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--fg);
+  }
+  .gh-stat span {
+    font-size: 10px;
+    letter-spacing: .16em;
+    color: var(--dim);
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand" aria-hidden="true">&#xF08C7;</div>
+    <div class="clock" id="clock"></div>
+    <div class="sbox">
+      <input class="search" id="q" type="text" placeholder="Search Google..."
+             autocomplete="off" autocapitalize="off" spellcheck="false">
+      <svg class="ring" aria-hidden="true"><rect id="ringRect" x="1" y="1"></rect></svg>
+      <div class="sugs" id="sugs"></div>
+    </div>
+    <div class="engines" id="engines"></div>
+    <div class="scs" id="scs"></div>
+
+    <div class="gh" id="gh">
+      <div class="gh-head">
+        <span class="gh-lbl">GITHUB:</span>
+        <a class="gh-status" id="ghLink" href="#" title="Configure GitHub stats">󰊤 CONFIGURE</a>
+      </div>
+      <div class="gh-body" id="ghBody">
+        <div class="gh-msg">Open settings to configure GitHub stats</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="editor" id="editor">
+    <div class="box">
+      <h2>ADD A SHORTCUT</h2>
+      <input id="inName" type="text" placeholder="Name (e.g. Hacker News)">
+      <input id="inUrl" type="text" placeholder="https://news.ycombinator.com">
+      <div class="btns">
+        <button id="edOk">ADD</button>
+        <button id="edCancel" class="ghost">CANCEL</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ghset" id="ghSet">
+    <div class="box">
+      <h2>GITHUB USERNAME</h2>
+      <input id="ghUser" type="text" placeholder="your-username" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <div class="ghset-msg" id="ghSetMsg"></div>
+      <div class="btns">
+        <button id="ghOk">SAVE</button>
+        <button id="ghClear" class="ghost">REMOVE</button>
+        <button id="ghCancel" class="ghost">CANCEL</button>
+      </div>
+    </div>
+  </div>
+
+<script src="newtab.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+* {
+    font: "JetBrainsMono Nerd Font 16";
+    bg: #000000;
+    fg: #FFFFFF;
+}
+
+#window {
+    border: 0;
+    background-color: @bg;
+    location: center;
+    width: 640px;
+}
+
+#listview {
+    background-color: @bg;
+    border: 0;
+    spacing: 0;
+}
+
+#element {
+    border: 0;
+    background-color: @bg;
+    padding: 8px 20px;
+}
+
+#element selected {
+    background-color: @fg;
+    text-color: #000000;
+}

@@ -1,0 +1,26 @@
+# junk / secrets
+*.backup
+*.log
+.cache/
+.copilot/
+.gnupg/
+.local/share/Trash/
+.npm/
+.password-store/
+.pki/
+scripts/power-menu.sh.swp
+
+# electron / runtime junk
+**/Cache/
+**/Code Cache/
+**/GPUCache/
+**/DawnWebGPUCache/
+**/DawnGraphiteCache/
+**/Trust Tokens/
+**/Singleton*
+**/cookie
+**/.iconcache/
+
+# dotfiles-setup runtime
+.dotfiles-active
+.dotfiles-backup/

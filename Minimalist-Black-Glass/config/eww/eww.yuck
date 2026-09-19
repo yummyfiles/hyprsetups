@@ -1,0 +1,207 @@
+;;; eww HUD widgets — YUMMYFILES (black & white, image-based)
+(defvar show_desktop_widgets true)
+(deflisten ghimg :interval "1m" "~/.config/eww/scripts/gh_hud.sh")
+(deflisten mediaimg :interval "3s" "~/.config/eww/scripts/media_hud.sh")
+(deflisten ghdb :interval "5m" "~/.config/eww/scripts/gh_dashboard.sh")
+(deflisten ghstr :interval "6h" "~/.config/eww/scripts/gh_streak.sh")
+
+;; --- new widgets data ---
+(deflisten clocktime :interval "1s" "date '+%-l:%M %p'")
+(deflisten clockdate :interval "1s" "date '+%A · %d %B'")
+(deflisten weather :interval "1800s" "~/.config/eww/scripts/weather.sh")
+(deflisten cal :interval "3600s" "~/.config/eww/scripts/calendar.sh")
+(deflisten sysinfo :interval "3s" "~/.config/eww/scripts/sysinfo.sh")
+(deflisten stoat :interval "10s" "~/.config/eww/scripts/stoat_hud.sh")
+(defvar sys_boost "BOOST")
+(defvar app_page 1)
+(defvar app_pages 1)
+(defvar app_total 0)
+(defvar app_p0 "/home/yummy.dev/.config/eww/assets/icons/app.svg")
+(defvar app_n0 "")
+(defvar app_c0 "true")
+(defvar app_p1 "/home/yummy.dev/.config/eww/assets/icons/app.svg")
+(defvar app_n1 "")
+(defvar app_c1 "true")
+(defvar app_p2 "/home/yummy.dev/.config/eww/assets/icons/app.svg")
+(defvar app_n2 "")
+(defvar app_c2 "true")
+(defvar app_p3 "/home/yummy.dev/.config/eww/assets/icons/app.svg")
+(defvar app_n3 "")
+(defvar app_c3 "true")
+(defvar app_p4 "/home/yummy.dev/.config/eww/assets/icons/app.svg")
+(defvar app_n4 "")
+(defvar app_c4 "true")
+(defvar app_p5 "/home/yummy.dev/.config/eww/assets/icons/app.svg")
+(defvar app_n5 "")
+(defvar app_c5 "true")
+(defvar app_p6 "/home/yummy.dev/.config/eww/assets/icons/app.svg")
+(defvar app_n6 "")
+(defvar app_c6 "true")
+(defvar app_p7 "/home/yummy.dev/.config/eww/assets/icons/app.svg")
+(defvar app_n7 "")
+(defvar app_c7 "true")
+(defvar app_p8 "/home/yummy.dev/.config/eww/assets/icons/app.svg")
+(defvar app_n8 "")
+(defvar app_c8 "true")
+(defvar app_p9 "/home/yummy.dev/.config/eww/assets/icons/app.svg")
+(defvar app_n9 "")
+(defvar app_c9 "true")
+(defvar app_p10 "/home/yummy.dev/.config/eww/assets/icons/app.svg")
+(defvar app_n10 "")
+(defvar app_c10 "true")
+(defvar app_p11 "/home/yummy.dev/.config/eww/assets/icons/app.svg")
+(defvar app_n11 "")
+(defvar app_c11 "true")
+
+(defwindow github
+  :monitor 0
+  :background "#000000"
+  :windowtype "normal"
+  :visible {show_desktop_widgets}
+  :geometry (geometry :x "800px" :y "0px" :width "640px" :height "128px")
+  (image :path {ghimg} :image-width 640 :image-height 128))
+
+(defwindow media
+  :monitor 0
+  :background "#000000"
+  :windowtype "normal"
+  :visible {show_desktop_widgets}
+  :geometry (geometry :x "12px" :y "34px" :width "500px" :height "88px")
+  (image :path {mediaimg} :image-width 500 :image-height 88))
+
+(defwidget ghd-stat [icon-path number]
+  (box :class "ghd-stat" :orientation "v" :spacing 10 :valign "center" :halign "center" :hexpand true
+    (image :path {icon-path} :image-width 30 :image-height 30)
+    (label :class "ghd-stat-num" :text {number})))
+
+(defwidget ghd-substat [label number]
+  (box :class "ghd-substat" :orientation "v" :spacing 4
+    (label :class "ghd-substat-key" :text {label})
+    (label :class "ghd-substat-num" :text {number})))
+
+(defwindow gh-dashboard
+  :monitor 0
+  :background "#000000"
+  :windowtype "normal"
+  :stacking "fg"
+  :focusable false
+  :visible {show_desktop_widgets}
+  :geometry (geometry :x "40px" :y "180px" :width "640px" :height "224px")
+  (box :class "ghd-frame" :orientation "v" :hexpand true :vexpand true
+    (box :class "ghd-root" :orientation "v" :spacing 14
+      (box :class "ghd-top" :orientation "h" :spacing 0
+        (image :class "ghd-avatar" :path {ghdb.avatar} :image-width 96 :image-height 96)
+        (box :class "ghd-title" :orientation "v" :spacing 8 :valign "center" :hexpand true
+          (label :class "ghd-name" :text "YUMMYFILES // DEV")
+          (label :class "ghd-login" :text "@yummyfiles"))
+        (button :class "ghd-btn" :cursor "pointer"
+          :tooltip "Open the GitHub profile"
+          :onclick "xdg-open {ghdb.profile}"
+          (image :class "ghd-logo" :path "/home/yummy.dev/.config/eww/assets/icons/github.svg" :image-width 96 :image-height 96)))
+      (box :class "ghd-graphrow" :orientation "v" :spacing 10
+        (image :class "ghd-graph" :path {ghstr.graph} :image-width 590 :image-height 90)
+        (box :class "ghd-substats" :orientation "h" :spacing 20
+          (ghd-substat :label "STREAK" :number {ghstr.streak})
+          (ghd-substat :label "LONGEST" :number {ghstr.longest})
+          (ghd-substat :label "LAST YEAR" :number {ghstr.total})))
+      (box :class "ghd-stats" :orientation "h"
+        (ghd-stat :icon-path "/home/yummy.dev/.config/eww/assets/icons/user.svg" :number {ghdb.followers})
+        (ghd-stat :icon-path "/home/yummy.dev/.config/eww/assets/icons/star.svg" :number {ghdb.stars})
+        (ghd-stat :icon-path "/home/yummy.dev/.config/eww/assets/icons/code.svg" :number {ghdb.repos})))))
+
+;; --- clock ---
+(defwindow clock
+  :monitor 0
+  :background "#000000"
+  :windowtype "normal"
+  :visible {show_desktop_widgets}
+  :geometry (geometry :x "545px" :y "34px" :width "250px" :height "88px")
+  (box :class "panel clock-box" :orientation "v" :spacing 3 :halign "center" :valign "center"
+    (label :class "clock-time" :text {clocktime})
+    (label :class "clock-date" :text {clockdate})))
+
+;; --- weather ---
+(defwindow weather
+  :monitor 0
+  :background "#000000"
+  :windowtype "normal"
+  :visible {show_desktop_widgets}
+  :geometry (geometry :x "1160px" :y "142px" :width "270px" :height "118px")
+  (box :class "panel" :orientation "v" :spacing 5 :halign "start" :vexpand true
+    (label :class "hud-title" :text "WEATHER")
+    (label :class "hud-body" :text {weather} :halign "start")))
+
+;; --- stoat ---
+(defwindow stoat
+  :monitor 0
+  :background "#000000"
+  :windowtype "normal"
+  :stacking "fg"
+  :focusable false
+  :visible {show_desktop_widgets}
+  :geometry (geometry :x "1160px" :y "268px" :width "270px" :height "128px")
+  (box :class "panel" :orientation "v" :spacing 5
+    (box :class "stoat-row" :orientation "h" :spacing 8
+      (label :class "hud-title" :text "STOAT")
+      (label :class "hud-body" :text {stoat}))
+    (button :class "stoat-btn" :cursor "pointer" :tooltip "Open / focus the Stoat chat window"
+      :onclick "sh ~/.config/eww/scripts/stoat_open.sh"
+      (label :text "OPEN CHAT"))))
+
+;; --- calendar ---
+(defwindow calendar
+  :monitor 0
+  :background "#000000"
+  :windowtype "normal"
+  :visible {show_desktop_widgets}
+  :geometry (geometry :x "1160px" :y "560px" :width "260px" :height "200px")
+  (box :class "panel cal-box" :orientation "v" :spacing 6
+    (label :class "cal-grid" :text {cal} :markup true :selectable true)))
+
+;; --- system info ---
+(defwindow sysinfo
+  :monitor 0
+  :background "#000000"
+  :windowtype "normal"
+  :stacking "fg"
+  :focusable false
+  :visible {show_desktop_widgets}
+  :geometry (geometry :x "40px" :y "412px" :width "340px" :height "240px")
+  (box :class "panel" :orientation "v" :spacing 6
+    (label :class "hud-title" :text "SYSTEM")
+    (box :class "sys-stat" :orientation "h" :spacing 8 :valign "center"
+      (label :class "hud-body" :text {sysinfo} :valign "center")
+      (button :class "boost-btn" :cursor "pointer" :tooltip "Flush caches & compact memory (sudo)"
+        :onclick "sh ~/.config/eww/scripts/boost.sh"
+        (label :text {sys_boost})))))
+
+;; --- app dock ---
+(defwindow appdock
+  :monitor 0
+  :background "#000000"
+  :windowtype "normal"
+  :stacking "fg"
+  :focusable false
+  :visible {show_desktop_widgets}
+  :geometry (geometry :x "318px" :y "656px" :width "764px" :height "64px")
+  (box :class "dock-root" :orientation "h" :spacing 6 :halign "center"
+    (button :class "dock-nav" :tooltip "Previous page"
+      :onclick "sh ~/.config/eww/scripts/apps.sh prev"
+      (label :text "‹"))
+    (box :class "dock-grid" :orientation "h" :spacing 4
+      (button :class "app-tile" :tooltip {app_n0} :onclick {app_c0} (image :path {app_p0} :image-width 46 :image-height 46))
+      (button :class "app-tile" :tooltip {app_n1} :onclick {app_c1} (image :path {app_p1} :image-width 46 :image-height 46))
+      (button :class "app-tile" :tooltip {app_n2} :onclick {app_c2} (image :path {app_p2} :image-width 46 :image-height 46))
+      (button :class "app-tile" :tooltip {app_n3} :onclick {app_c3} (image :path {app_p3} :image-width 46 :image-height 46))
+      (button :class "app-tile" :tooltip {app_n4} :onclick {app_c4} (image :path {app_p4} :image-width 46 :image-height 46))
+      (button :class "app-tile" :tooltip {app_n5} :onclick {app_c5} (image :path {app_p5} :image-width 46 :image-height 46))
+      (button :class "app-tile" :tooltip {app_n6} :onclick {app_c6} (image :path {app_p6} :image-width 46 :image-height 46))
+      (button :class "app-tile" :tooltip {app_n7} :onclick {app_c7} (image :path {app_p7} :image-width 46 :image-height 46))
+      (button :class "app-tile" :tooltip {app_n8} :onclick {app_c8} (image :path {app_p8} :image-width 46 :image-height 46))
+      (button :class "app-tile" :tooltip {app_n9} :onclick {app_c9} (image :path {app_p9} :image-width 46 :image-height 46))
+      (button :class "app-tile" :tooltip {app_n10} :onclick {app_c10} (image :path {app_p10} :image-width 46 :image-height 46))
+      (button :class "app-tile" :tooltip {app_n11} :onclick {app_c11} (image :path {app_p11} :image-width 46 :image-height 46)))
+    (button :class "dock-nav" :tooltip "Next page"
+      :onclick "sh ~/.config/eww/scripts/apps.sh next"
+      (label :text "›"))
+    (label :class "dock-page" :text "{app_page}/{app_pages}")))

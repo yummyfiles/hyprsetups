@@ -1,0 +1,79 @@
+@define-color window_bg_color #000000;
+@define-color window_fg_color #ffffff;
+@define-color view_bg_color #000000;
+@define-color view_fg_color #ffffff;
+@define-color headerbar_bg_color #000000;
+@define-color headerbar_fg_color #ffffff;
+@define-color headerbar_border_color #ffffff;
+@define-color card_bg_color #000000;
+@define-color card_fg_color #ffffff;
+@define-color popover_bg_color #000000;
+@define-color popover_fg_color #ffffff;
+@define-color dialog_bg_color #000000;
+@define-color dialog_fg_color #ffffff;
+@define-color sidebar_bg_color #000000;
+@define-color sidebar_fg_color #ffffff;
+@define-color content_bg_color #000000;
+@define-color content_fg_color #ffffff;
+
+@define-color accent_color #ffffff;
+@define-color accent_bg_color #ffffff;
+@define-color accent_fg_color #000000;
+
+@define-color borders #ffffff;
+@define-color borders_strong #ffffff;
+
+window,
+window.background,
+.background,
+.sidebar,
+.terminal-screen {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+headerbar,
+toolbar,
+actionbar {
+    background-color: #000000;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    box-shadow: none;
+}
+
+entry,
+button,
+combobox button,
+spinbutton {
+    border-radius: 0;
+    border: none;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+button:hover,
+combobox button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+label:disabled,
+button:disabled,
+label {
+    color: #ffffff;
+}
+
+.scale {
+    color: #ffffff;
+}
+
+check,
+radio {
+    color: #ffffff;
+}
+
+separator,
+frame,
+border {
+    border-color: #ffffff;
+}

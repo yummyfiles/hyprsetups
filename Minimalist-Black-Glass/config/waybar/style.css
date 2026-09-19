@@ -1,0 +1,91 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    min-height: 0;
+}
+
+window#waybar {
+    background: #000000;
+    color: #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #FFFFFF;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+#workspaces button.focused {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+#workspaces button.urgent {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+#workspaces button:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+#mode {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+#clock, #battery, #cpu, #memory, #temperature, #network, #pulseaudio, #bluetooth, #custom-notification, #custom-power, #custom-brand, #custom-github, #custom-hyprsetups, #custom-incognito {
+    padding: 0 10px;
+    color: #FFFFFF;
+    background: transparent;
+    border-left: 1px solid #FFFFFF;
+}
+
+#custom-arch {
+    padding: 0 10px;
+    color: #FFFFFF;
+    background: transparent;
+    border-left: none;
+    font-size: 20px;
+}
+
+#custom-media {
+    margin: 0;
+    padding: 0 10px;
+    color: #FFFFFF;
+    background: transparent;
+    border-left: none;
+}
+
+#battery.charging {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #FFFFFF;
+    color: #000000;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: transparent;
+        color: #FFFFFF;
+    }
+}

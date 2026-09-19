@@ -1,0 +1,121 @@
+@-moz-document url-prefix("http") {
+  * {
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace !important;
+  }
+}
+
+/* --- Firefox internal "about:" pages: match the black/white theme --- */
+@-moz-document url-prefix("about:") {
+  :root {
+    color-scheme: dark !important;
+
+    --background-color-canvas: #000000 !important;
+    --background-color-box: #000000 !important;
+    --background-color-box-info: #0a0a0a !important;
+    --background-color-dimmed: #1c1c1c !important;
+    --background-color-dimmed-further: #242424 !important;
+
+    --text-color: #ffffff !important;
+    --text-color-deemphasized: #b0b0b0 !important;
+
+    --border-color: #3a3a3a !important;
+    --border-color-deemphasized: #2a2a2a !important;
+    --border-color-interactive: #6a6a6a !important;
+    --border-color-interactive-hover: #ffffff !important;
+    --border-color-interactive-active: #ffffff !important;
+
+    --color-accent-primary: #ffffff !important;
+    --color-accent-primary-hover: #e6e6e6 !important;
+    --color-accent-primary-active: #cccccc !important;
+    --focus-outline-color: #ffffff !important;
+    --link-color: #ffffff !important;
+    --link-color-hover: #cccccc !important;
+    --link-color-active: #ffffff !important;
+
+    --button-background-color: #1a1a1a !important;
+    --button-background-color-hover: #2a2a2a !important;
+    --button-background-color-active: #3a3a3a !important;
+    --button-background-color-primary: #ffffff !important;
+    --button-background-color-primary-hover: #e6e6e6 !important;
+    --button-background-color-primary-active: #cccccc !important;
+
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace !important;
+  }
+  :root,
+  body {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+  /* Firefox logos / mascots / illustrations -> pure white */
+  img[src^="chrome://"],
+  img[src^="resource://"],
+  .title,
+  .logo,
+  .wordmark,
+  #about-private-browsing-logo,
+  [class*="illustration"],
+  [id*="illustration"],
+  [class*="mascot"] {
+    filter: brightness(0) invert(1) !important;
+  }
+  a,
+  a:visited {
+    color: #ffffff !important;
+  }
+  a:hover {
+    color: #cccccc !important;
+  }
+  button.primary,
+  button[type="submit"],
+  button[autofocus] {
+    color: #000000 !important;
+  }
+  /* Session-restore / welcome-back expandable tab list (XUL tree) */
+  tree,
+  #tabList {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #ffffff !important;
+  }
+  treechildren::-moz-tree-row,
+  treechildren::-moz-tree-row(multicol, odd) {
+    background-color: #000000 !important;
+  }
+  treechildren::-moz-tree-row(hover) {
+    background-color: #262626 !important;
+  }
+  treechildren::-moz-tree-row(selected),
+  treechildren::-moz-tree-row(selected, focus) {
+    background-color: #ffffff !important;
+  }
+  treechildren::-moz-tree-cell-text {
+    color: #ffffff !important;
+  }
+  treechildren::-moz-tree-cell-text(selected),
+  treechildren::-moz-tree-cell-text(selected, focus) {
+    color: #000000 !important;
+  }
+  treecol,
+  .tree-columnpicker-button {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-inline-start: 1px solid #ffffff !important;
+    box-shadow: inset 0 -1px #ffffff !important;
+  }
+  treecol:hover,
+  .tree-columnpicker-button:hover {
+    background-color: #262626 !important;
+    color: #ffffff !important;
+  }
+  treechildren::-moz-tree-separator {
+    border-top-color: #ffffff !important;
+  }
+}
+
+/* --- About Firefox dialog logo/wordmark -> white --- */
+@-moz-document url("chrome://browser/content/aboutDialog.xhtml") {
+  #leftBox,
+  #rightBox {
+    filter: brightness(0) invert(1) !important;
+  }
+}

@@ -1,0 +1,16 @@
+{
+	"firstLaunch": false,
+	"customFrame": true,
+	"minimiseToTray": true,
+	"startMinimisedToTray": false,
+	"spellchecker": true,
+	"hardwareAcceleration": true,
+	"discordRpc": true,
+	"windowState": {
+		"x": 0,
+		"y": 0,
+		"width": 366,
+		"height": 416,
+		"isMaximised": true
+	}
+}

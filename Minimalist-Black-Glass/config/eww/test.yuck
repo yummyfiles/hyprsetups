@@ -1,0 +1,15 @@
+(defwidget t_row [ws]
+  (box :orientation "h" :spacing 0 :class "tr"
+    (box :class "t-bg" :min-width ws (label :text "B1"))
+    (label :class "t-lbl" :text "L2")
+    (box :class "t-border" (label :text "B3"))))
+
+(defwindow test1
+  :monitor 0 :windowtype "normal"
+  :geometry (geometry :x "0px" :y "600px" :width "480px" :height "60px")
+  (t_row :ws "120px"))
+
+(defwindow test2
+  :monitor 0 :windowtype "normal"
+  :geometry (geometry :x "0px" :y "660px" :width "480px" :height "60px")
+  (box :orientation "h" (label :class "t-lb" :text "ONE") (label :class "t-lb" :text "TWO")))

@@ -1,0 +1,85 @@
+@define-color window_bg_color #000000;
+@define-color window_fg_color #ffffff;
+@define-color view_bg_color #000000;
+@define-color view_fg_color #ffffff;
+@define-color headerbar_bg_color #000000;
+@define-color headerbar_fg_color #ffffff;
+@define-color headerbar_border_color #ffffff;
+@define-color card_bg_color #000000;
+@define-color card_fg_color #ffffff;
+@define-color popover_bg_color #000000;
+@define-color popover_fg_color #ffffff;
+@define-color dialog_bg_color #000000;
+@define-color dialog_fg_color #ffffff;
+@define-color sidebar_bg_color #000000;
+@define-color sidebar_fg_color #ffffff;
+@define-color sidebar_backdrop_color #000000;
+@define-color content_bg_color #000000;
+@define-color content_fg_color #ffffff;
+
+@define-color accent_color #ffffff;
+@define-color accent_bg_color #ffffff;
+@define-color accent_fg_color #000000;
+
+@define-color borders #ffffff;
+@define-color borders_strong #ffffff;
+@define-color destructive_color #ffffff;
+@define-color destructive_bg_color #ffffff;
+@define-color destructive_fg_color #000000;
+
+window.csd {
+    border: 1px solid #ffffff;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+headerbar {
+    border-bottom: 1px solid #ffffff;
+    box-shadow: none;
+}
+
+button,
+entry {
+    border: none;
+    border-radius: 0;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+label:disabled {
+    color: #5b5b5b;
+}
+
+.clock-time {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+spinbutton,
+spinbutton.vertical,
+spinbutton:focus,
+spinbutton:focus-within {
+    border-radius: 0;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+spinbutton button,
+spinbutton.vertical button,
+spinbutton:focus button,
+spinbutton:focus-within button {
+    border-radius: 0;
+    border: none;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+spinbutton button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
