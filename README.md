@@ -44,4 +44,4 @@ dotfiles-setup use <name> # apply a different rice
 
 ## // CUSTOMIZE IT
 
-Swap the wallpaper, change the colors,and move stuff around.
+Swap the wallpaper, change the colors, and move stuff around.
