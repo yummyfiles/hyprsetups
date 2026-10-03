@@ -7,10 +7,10 @@ a collection of my Hyprland rices and setups.
 | Setup | Style | Status |
 | ------ | ----- | ------ |
 | **HUD** | desktop HUD · widgets · overlays | in progress |
-| **Minimalist Black Glass** | minimal · glass · monochrome | ready |
-| **Green Hacker** | green · terminal · hacker | placeholder |
+| **Minimalist black glass** | minimal · glass · monochrome | ready |
+| **Matrix** | green · terminal · hacker | placeholder |
 | **RGB** | RGB · colorful · gaming | placeholder |
-| **Neon Blue Hyprland Rice** | neon blue · dark · cyber | placeholder |
+| **Hyprland, but upgraded** | neon blue · dark · cyber | placeholder |
 | **Space** | space · dark · cosmic | placeholder |
 | **Candy** | pastel · colorful · soft | placeholder |
 | **Spider-Man** | red · blue · comic | placeholder |
