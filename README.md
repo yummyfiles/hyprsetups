@@ -1,47 +1,94 @@
-## HYPRSETUPS // RICE COLLECTION
+# HYPRSETUPS // RICE COLLECTION
 
-a collection of my Hyprland rices and setups.
+my collection of Hyprland rices.
 
-## // COLLECTION
+No giant rice framework. No theme compiler. No database. No 500-file config system.
 
-| Setup | Style | Status |
-| ------ | ----- | ------ |
-| **HUD** | desktop HUD · widgets · overlays | in progress |
-| **Minimalist black glass** | minimal · glass · monochrome | ready |
-| **Matrix** | green · terminal · hacker | placeholder |
-| **RGB** | RGB · colorful · gaming | placeholder |
-| **Hyprland, but upgraded** | neon blue · dark · cyber | placeholder |
-| **Space** | space · dark · cosmic | placeholder |
-| **Candy** | pastel · colorful · soft | placeholder |
-| **Spider-Man** | red · blue · comic | placeholder |
-| **Spider-Man: Miles Morales** | red · black · neon | placeholder |
-| **Venom** | black · symbiote · dark | placeholder |
-| **Carnage** | red · black · chaotic | placeholder |
-| **Batman** | black · yellow · dark | placeholder |
-| **Deadpool** | red · black · comic | placeholder |
-| **Five Nights at Freddy's** | dark · horror · arcade | placeholder |
-| **more setups** | whatever I feel like making | soon |
+Just actual dotfiles, wallpapers, scripts, and a few keybinds to switch between setups.
 
-> Each rice lives in its own folder with its full config, keybinds, scripts
-> and setup instructions. Switch between them with `dotfiles-setup`.
+## // THE COLLECTION
 
-## // INSTALL
+| Rice | Style |
+| ------ | ----- |
+| **Hyprland+** | polished Hyprland · cyan/blue · modern · futuristic |
+| **Catppuccin** | Catppuccin Mocha · matte · minimal · invisible chrome |
+| **RedBlack** | pure black · pure red · terminal · high contrast |
+| **Matrix** | Matrix green · terminal · digital · hacker |
+| **Spider-Man** | cinematic · dark · rain · red/white accents |
+| **Monochrome** | black/white/gray · experimental · typography-heavy |
+
+Each rice is its own setup. They can have completely different layouts, widgets, bars, launchers, wallpapers, and app configs.
+
+That's kinda the whole point.
+
+## // SWITCHING
+
+The collection includes a small rice switcher so you can jump between setups without bringing back a giant theme system.
+
+From the repo:
 
 ```sh
 git clone https://github.com/yummyfiles/hyprsetups
 cd hyprsetups
-sh install.sh                # pick a rice
-sh install.sh --force        # replace existing configs (backs them up first)
-sh install.sh Minimalist-Black-Glass
+sh install.sh
 ```
 
-From the launcher you can switch rices with:
+Or use the switcher:
 
 ```sh
-dotfiles-setup list       # see the collection
-dotfiles-setup use <name> # apply a different rice
+dotfiles-setup list
+dotfiles-setup use <name>
 ```
+
+The Rofi selector can also be used to pick a rice directly from the desktop.
+
+## // WHAT'S INSIDE
+
+Each rice is built around normal config files instead of generated config.
+
+Typical stuff includes:
+
+- Hyprland
+- Waybar
+- Kitty
+- Rofi
+- notifications
+- wallpapers
+- GTK / Qt theming
+- app-specific config
+- small helper scripts
+- rice-specific widgets
+
+A rice can use more or less than another rice. If one setup needs a completely different layout, that's fine.
+
+## // DESIGN PHILOSOPHY
+
+**Keep it simple.**
+
+These are meant to be real, usable desktop setups — not a framework for building frameworks.
+
+- actual config files are the rice
+- different rices can be completely different
+- no shared theme compiler
+- no generated config database
+- no unnecessary watchers
+- no runtime override system
+- no giant compatibility layer
+- easy to read
+- easy to modify
+- easy to delete
+
+Basically: clone it, pick a rice, make it yours.
 
 ## // CUSTOMIZE IT
 
-Swap the wallpaper, change the colors, and move stuff around.
+Change whatever you want.
+
+Swap wallpapers, change colors, move widgets around, replace Waybar, rewrite the Rofi layout, add your own scripts — whatever.
+
+These are my setups, but they're just dotfiles at the end of the day.
+
+---
+
+**made by [yummyfiles](https://github.com/yummyfiles)**
+
