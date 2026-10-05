@@ -100,6 +100,8 @@ dotfiles-setup list
 dotfiles-setup use <name>
 ```
 
+You can also press **SUPER + R** from the desktop to open the Rofi rice selector and switch setups without typing anything.
+
 The Rofi selector can also be used to pick a rice directly from the desktop.
 
 ## // WHAT'S INSIDE
@@ -151,4 +153,3 @@ These are my setups, but they're just dotfiles at the end of the day.
 ---
 
 **made by [yummyfiles](https://github.com/yummyfiles)**
-
