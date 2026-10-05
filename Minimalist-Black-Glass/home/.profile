@@ -1,3 +1,0 @@
-export QT_QPA_PLATFORMTHEME=kde
-export QT_STYLE_OVERRIDE=kvantum
-export KVANTUM_THEME=MonoFlat

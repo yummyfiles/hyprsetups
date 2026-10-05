@@ -1,9 +1,0 @@
-{
-  "name": "yummyfiles-startpage",
-  "version": "1.0.7",
-  "description": "Themed startpage with Google search for new tabs and GitHub stats widget",
-  "main": "index.html",
-  "scripts": {
-    "build": "cd startpage-ext && zip -r ../startpage.xpi *"
-  }
-}
