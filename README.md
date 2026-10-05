@@ -100,9 +100,15 @@ dotfiles-setup list
 dotfiles-setup use <name>
 ```
 
-You can also press **SUPER + SHIFT + R** from the desktop to open the Rofi rice selector and switch setups without typing anything.
-
 The Rofi selector can also be used to pick a rice directly from the desktop.
+
+## // KEYBINDS
+
+| Shortcut | Action |
+| -------- | ------ |
+| **SUPER + SHIFT + R** | Open the Rofi rice selector |
+
+More keybinds may be added as the collection grows.
 
 ## // WHAT'S INSIDE
 
