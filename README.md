@@ -21,6 +21,54 @@ Each rice is its own setup. They can have completely different layouts, widgets,
 
 That's kinda the whole point.
 
+## // FILES + FOLDERS
+
+The repo is intentionally simple.
+
+```text
+hyprsetups/
+├── Hyprland-Plus/
+│   ├── hypr/
+│   ├── waybar/
+│   ├── kitty/
+│   ├── rofi/
+│   ├── notifications/
+│   ├── wallpapers/
+│   └── ...
+├── Catppuccin/
+│   ├── hypr/
+│   ├── waybar/
+│   ├── kitty/
+│   ├── rofi/
+│   ├── notifications/
+│   ├── wallpapers/
+│   └── ...
+├── RedBlack/
+│   ├── hypr/
+│   ├── waybar/
+│   ├── kitty/
+│   ├── rofi/
+│   ├── notifications/
+│   ├── wallpapers/
+│   └── ...
+├── Matrix/
+│   └── ...
+├── Spider-Man/
+│   └── ...
+├── Monochrome/
+│   └── ...
+├── bin/
+│   └── dotfiles-setup
+├── install.sh
+└── README.md
+```
+
+The exact contents can be different between rices.
+
+One rice might have a music widget, another might have desktop widgets, another might have almost nothing on the desktop. There isn't a required template that every rice has to follow.
+
+The important part is that the config files are real files you can open and edit.
+
 ## // SWITCHING
 
 The collection includes a small rice switcher so you can jump between setups without bringing back a giant theme system.
