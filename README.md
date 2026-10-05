@@ -8,6 +8,18 @@ Just actual dotfiles, wallpapers, scripts, and a few keybinds to switch between 
 
 ## // THE COLLECTION
 
+![Hyprland+](assets/hyprland-plus.svg)
+
+![Catppuccin](assets/catppuccin.svg)
+
+![RedBlack](assets/redblack.svg)
+
+![Matrix](assets/matrix.svg)
+
+![Spider-Man](assets/spiderman.svg)
+
+![Monochrome](assets/monochrome.svg)
+
 | Rice | Style |
 | ------ | ----- |
 | **Hyprland+** | polished Hyprland · cyan/blue · modern · futuristic |
